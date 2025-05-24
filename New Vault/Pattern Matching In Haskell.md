@@ -261,19 +261,3 @@ isOrigin (0, 0, 0)
 --      In the expression: isOrigin (0, 0, 0)
 --      In an equation for `it': it = isOrigin (0, 0, 0)
 ```
-
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-

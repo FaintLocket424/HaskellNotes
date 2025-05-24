@@ -110,6 +110,10 @@ Probably the most important type in Haskell is the [[Lists in Haskell|List]], th
 
 We're now getting towards some of the powerful stuff, **Polymorphism**, via [[Pattern Matching In Haskell|Pattern Matching]].
 
+And a useful tool for this is [[Case Expressions|Case Expressions in Haskell]].
+
+---
+
 
 
 
@@ -141,21 +145,22 @@ Haskell Topics in order
 11. currying ✅
 12. lists ✅
 13. type constructors (maybe, either etc.) ✅
-14. pattern_matching + case_expressions
-15. function guards
-16. let_bindings
-17. where_bindings
-18. polymorphism
-19. recursion
-20. lambda_expressions
-21. higher_order_functions
-22. lazy_evaluation
-23. io
-24. kinds
-25. custom_data_types
-26. functors
-27. applicatives
-28. monoids
-29. monads 
+14. pattern_matching ✅
+15. case_expressions ✅
+16. function guards
+17. let_bindings
+18. where_bindings
+19. polymorphism
+20. recursion
+21. lambda_expressions
+22. higher_order_functions
+23. lazy_evaluation
+24. io
+25. kinds
+26. custom_data_types
+27. functors
+28. applicatives
+29. monoids
+30. monads 
 
 %%
