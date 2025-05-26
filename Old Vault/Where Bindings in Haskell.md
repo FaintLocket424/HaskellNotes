@@ -43,10 +43,10 @@ In fact, that's one of the great features of the where binding. it's available a
 ```Haskell
 bmiTell :: (RealFloat a) => a -> a -> String
 bmiTell weight height
-    | bmi <= skinny = "You're underweight, you emo, you!"
-    | bmi <= normal = "You're supposedly normal. Pffft, I bet you're ugly!"
-    | bmi <= fat    = "You're fat! Lose some weight, fatty!"
-    | otherwise     = "You're a whale, congratulations!"
+    | bmi <= skinny = "You're underweight."
+    | bmi <= normal = "You're a healthy weight."
+    | bmi <= fat    = "You're overweight."
+    | otherwise     = "You're obese."
     where bmi = weight / height ^ 2
           skinny = 18.5
           normal = 25.0
