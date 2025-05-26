@@ -18,10 +18,10 @@ Take this function `bmiTell` which provides a message of _encouragement_ when yo
 ```Haskell
 bmiTell :: (RealFloat a) => a -> a -> String
 bmiTell weight height
-    | weight / height ^ 2 <= 18.5 = "You're underweight, you emo, you!"
-    | weight / height ^ 2 <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"
-    | weight / height ^ 2 <= 30.0 = "You're fat! Lose some weight, fatty!"
-    | otherwise                   = "You're a whale, congratulations!"
+    | weight / height ^ 2 <= 18.5 = "You're underweight."
+    | weight / height ^ 2 <= 25.0 = "You're a healthy weight."
+    | weight / height ^ 2 <= 30.0 = "You're overweight."
+    | otherwise                   = "You're obese."
 ```
 
 Notice how we have some very similar code, especially `weight / height ^ 2`. In any other language we would probably define a variable and then use it a bunch. We can do this in Haskell too!
@@ -31,10 +31,10 @@ We can use a Where binding to define a variable that we can use across all of ou
 ```Haskell
 bmiTell :: (RealFloat a) => a -> a -> String
 bmiTell weight height
-    | bmi <= 18.5 = "You're underweight, you emo, you!"
-    | bmi <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"
-    | bmi <= 30.0 = "You're fat! Lose some weight, fatty!"
-    | otherwise   = "You're a whale, congratulations!"
+    | bmi <= 18.5 = "You're underweight."
+    | bmi <= 25.0 = "You're a healthy weight."
+    | bmi <= 30.0 = "You're overweight."
+    | otherwise   = "You're obese."
     where bmi = weight / height ^ 2
 ```
 
