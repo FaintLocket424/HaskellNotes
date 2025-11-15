@@ -13,7 +13,7 @@ TARGET DECK: Programming Paradigms::Functional Programming
 
 Before learning how to create our own functions, it's probably useful to first learn how to use a function in Haskell.
 
-### Single Argument Functions
+### Using Single Argument Functions
 
 Let's take the `sqrt` function as an example. This function takes a number $a$ and returns its square root $\sqrt{ a }$.
 
@@ -43,7 +43,7 @@ Notice how we just put the number, no brackets.
 > [!warning]
 > You might be tempted to still use brackets like `sqrt (25)`, but you should resist this habit as Haskell programmers are **allergic to brackets**.
 
-### Multi-Argument Functions
+### Using Multi-Argument Functions
 
 Take the function `pow`, which takes two arguments $a$ and $b$, and returns $a^b$.
 
@@ -63,7 +63,7 @@ pow (2,6)
 
 Don't worry about exactly what this error message means, but in a nutshell it's saying that it cannot print a function to the screen.
 
-Print a function? We called the function to get a number?
+Print a function? But this is supposed to return a number?
 
 Well actually, we only gave it one of the two parameters it was expecting.
 
@@ -117,7 +117,7 @@ If you really wanted to put brackets around it, you would do it as `pow (2) (6)`
 > -- 12
 > ```
 > 
-> `12`? The answer is supposed to be `128`?? This is due to function application having a higher precedence than the addition `(+)` operator. So the compiler will do that first.
+> `12`? The answer is supposed to be `128`?? This is due to function application having a **higher precedence** than the addition `(+)` operator. So the compiler will do that first.
 > 
 > When the compiler looks at this code, it sees:
 > 
@@ -139,7 +139,7 @@ If you really wanted to put brackets around it, you would do it as `pow (2) (6)`
 
 ### Creating Single Argument Functions
 
-Let's look at a univariate Python function we can replicate.
+Let's look at a single variable Python function we can replicate.
 
 ```Python
 def double(x):
@@ -148,16 +148,18 @@ def double(x):
 
 `double` returns twice the value input into it.
 
-#### Picking a Function Decorator
+#### Step 1 - Picking a Function Decorator
 
 > [!warning]
 > Reasoning about types is a core part of understanding Haskell code.
+> 
+> Also you **will** have to do this in the exam and it's free marks.
 > 
 > **Always decorate function definitions with their type**.
 
 The first step when creating a function is determining the type. If you think back to [[The Basic Data Types of Haskell#Functions|Function Decorators]], a logical function type might be `Integer -> Integer`.
 
-But this is actually more restrictive than necessary. What if we used an `Int`? Or a `Float`? The multiplication `(*)` function will work with all these types, so why not allow our function to accept them?
+But this is actually more restrictive than necessary, and it's always best to use the least restrictive decorator possible. What if we used an `Int`? Or a `Float`? The multiplication `(*)` function will work with all these types, so why not allow our function to accept them?
 
 Instead, we can use a [[The Basic Type Classes of Haskell#Class Constraints|Class Constraint]] to specify that our function will input and output any type in the `Num` typeclass.
 
@@ -167,7 +169,7 @@ double :: (Num a) => a -> a
 
 So now our function can accept `Int`, `Integer`, `Float` and `Double`.
 
-#### Defining the function body
+#### Step 2 - Defining the function body
 
 Defining the function body is similar to the syntax to call functions.
 
@@ -216,7 +218,7 @@ In Haskell, everything is a function.
 
 This shouldn't be too surprising at this point but it needs emphasising because it defines **everything** you do in the language.
 
-In other languages, operators like `(+)`, `(-)` or `(*)` are just syntax. In Haskell they are what's known as **infix functions**, function which go in-between the operands.
+In other languages, operators like `(+)`, `(-)` or `(*)` are just syntax. In Haskell they are what's known as **infix functions**, function which go between the operands.
 
 Naturally, all infix functions are binary operators (functions of 2 arguments) like the ones mentioned above.
 
@@ -265,11 +267,13 @@ a # b = (a * b) + b
 10 +- 2 -- 28
 ```
 
+Funky!
+
 ---
 
 ## The Function Application Operator
 
-There's a function in Haskell called the "function application operator", and it has the symbol `($)`.
+There's a curious and very useful function in Haskell called the "function application operator", and it has the symbol `($)`.
 
 It's defined like this:
 
@@ -279,6 +283,24 @@ f $ x = f x
 ```
 
 It's an operator which when given a function and an input, will apply that function to the input.
+
+
+> [!example]
+> ```Haskell
+> not True
+> -- False
+> 
+> not $ True
+> -- False
+> 
+> show 154
+> -- "154"
+> 
+> show $ 154
+> -- "154"
+> ```
+> 
+> It's important to grasp that we're not just putting a `$` in-between the function and it's operands, we're passing a function and a value to the `($)` function.
 
 This may seem useless at first. Why not just do `double 5` instead of `double $ 5`?
 
@@ -306,3 +328,5 @@ double $ 5 + 5
 Of course we could have just put brackets around the `5 + 5`, for `double (5 + 5)` and that would've worked.
 
 But Haskell programmers are **allergic to brackets** and so will use `($)` when they can to remove them.
+
+You don't have to use this in your own code, but it's important to be able to understand what the operator is doing.

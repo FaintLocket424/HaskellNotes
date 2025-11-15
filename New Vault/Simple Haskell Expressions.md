@@ -17,7 +17,7 @@ The most basic [[Haskell]] expressions are the 5 simple arithmetic operations of
 2. Subtraction: `a - b`
 3. Multiplication: `a * b`
 4. Division: `a / b`
-5. Exponentiation: `a ** b` or `a ^ b`
+5. Exponentiation: `a ** b` or `a ^ b` (yes, there's a difference)
 
 These all work exactly the same as you'd expect from other languages.
 

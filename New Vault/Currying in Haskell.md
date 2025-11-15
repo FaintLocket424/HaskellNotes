@@ -24,7 +24,7 @@ def mult(a, b):
 mult(4, 5) # 20
 ```
 
-But in Haskell, multi-parameter functions don't actually exist.
+But in Haskell, multi-parameter functions **don't actually exist**.
 
 When you create a function with 2 arguments, you're actually creating two functions.
 

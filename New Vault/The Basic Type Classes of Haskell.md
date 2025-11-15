@@ -12,18 +12,21 @@ TARGET DECK: Programming Paradigms::Functional Programming
 ## Classes in Haskell
 
 > [!danger] Potential Misconception about Haskell Classes
-> Note that the definition of a class in Haskell is not the same as in [[Object Orientated Programming]].
+> Note that the definition of a class in Haskell is not the same as in **Object Orientated Programming**.
 > 
-> In Haskell, a class is much more similar to [[Interfaces in Java]].
+> In Haskell, a class is much more similar to *Interfaces* in Java.
 
 > [!Important] Definition of a Type Class
-> In Haskell, a type class is a generic interface which specifies a set of functions which any type must implement in order to be an instance of the type class.
+> In Haskell, a type class is an interface which specifies a set of functions which any type must implement in order to be an instance of the type class.
 
 Put in simpler terms: 
 
-1. A type class will have methods associated with it.
+1. A type class will have functions associated with it.
 2. All types which are instances of the type class must provide some implementation of each function.
 3. It creates a sort of contract, saying that "Any type which is an instance of this class will support these methods". (This is where the similarity to OOP interfaces comes from.)
+
+> [!NOTE] Why do we need this?
+> These interfaces allow us to put less restrictive input types on our functions. If we have a function which takes some values and only adds `(+)` them, it doesn't make sense to restrict it to only taking `Int` values. We might as well let it take `Integer`, `Float`, `Double` etc. since those types can all be added too.
 
 Type classes can also depend on one another, requiring a type to already be a member of a different typeclass before it can be a member of that one. Remember that being a member just means implementing certain methods.
 
@@ -35,13 +38,13 @@ Type classes can provide default implementations of methods but these can be ove
 
 ### The Problem
 
-I told you before that the type signature of the `(+)` function was this:
+Let's take the addition function, `(+)`:
 
 ```Haskell
 (+) :: Int -> Int -> Int
 ```
 
-Making `3 + 7 = 10`, all good. But what if we want to do `3.2 + 7.8`?
+Where `3 + 7 = 10`, all good. But what if we want to do `3.2 + 7.8`?
 
 Well, we could define `(+)` with Float instead.
 
@@ -75,8 +78,6 @@ And we get:
 ```
 
 But as it stands, there's nothing stopping us from putting a `Char` or a `(Int, [Bool])` into the function, which makes no sense. The `(+)` operator only works on numbers.
-
-If only we could apply some sort of constraint on the type variable, to only allow items of a certain typeclass…
 
 Say we had a typeclass called `Num` which represented integer and floating point numbers. Well, that's exactly what we want to allow into our `(+)` function!
 
@@ -117,7 +118,7 @@ Haskell implements 9 basic type classes, although there are many more.
 
 ### Eq
 
-The `Eq` typeclass provides an interface for testing equality. Any member of the `Eq` typeclass implements `==` and `/=` (Haskell uses /= for inequality).
+The `Eq` typeclass provides an interface for testing equality. Any member of the `Eq` typeclass implements `==` and `/=` (Haskell uses `/=` for inequality).
 
 ### Ord
 
@@ -143,7 +144,7 @@ But actually, it's not, it's a `Num`.
 20 :: (Num t) => t
 ```
 
-> [!warning] Additional context
+> [!warning] Additional Context - Beyond Scope
 > In fact, this makes numbers a kind of "Polymorphic Constant".
 > 
 > - If you put `20` into a function expecting an `Int`, then it will become an `Int`.
@@ -162,17 +163,15 @@ The `Integral` class represents whole numbers: `Int` and `Integer`.
 A useful function for dealing with numbers is `fromIntegral`.
 
 ```Haskell
-fromIntegral :: (Num b, Integral a) => a -> b
+fromIntegral :: (Integral a, Num b) => a -> b
 ```
 
 It takes an `Integral` and turns it into the more general `Num`. This is useful for mixing `Int` and `Float`.
 
 > [!example]
-> Take the `length` function of type `length :: [a] -> Int`. If we tried to get the length of a list and add it to a `Num` type, we would get a type error.
+> Take the function `length :: [a] -> Int` which returns the length of a list. Notice how it returns an `Int`. This is a problem because `(+)` only works when the types are the same. So what if we wanted to add `1.5` to the length of a list? We can't do `Float + Int`.
 > 
-> The addition function `(+)` expects two values which are instances of `Num`. But `length` is implemented badly and so it returns an `Int`.
-> 
-> We can use `fromIntegral` to convert this `Int` into a `Num` so it's more useful.
+> To solve this, we need a way to convert this `Int` value to any `Num` type like `Float`, `Double` or `Integral`. This is achieved with `fromIntegral`.
 > 
 > ```Haskell
 > 10 + length [1, 2, 3, 4]
@@ -228,6 +227,8 @@ show 10
 show [10, 20, 30]
 -- "[10,20,30]"
 ```
+
+`Show` is used a lot for printing outputs to the screen. The print functions will often only accept a string or an instance of `Show`.
 
 ### Read
 

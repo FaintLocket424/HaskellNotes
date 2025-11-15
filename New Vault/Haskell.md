@@ -13,12 +13,14 @@ TARGET DECK: Programming Paradigms::Functional Programming
 
 Haskell is a [[The Functional Programming Paradigm|Purely Functional]] language with:
 
-1. Strong Static Typing
-	- Data types are strictly enforced at compile time.
-2. Type Inference
-	- The compiler can automatically deduce data types based on usage and context, but they must still be statically typed.
-3. Lazy Evaluation
-	- Data is only computed when necessary, more on this later.
+> [!info] Strong Static Typing
+> Data types are strictly enforced at compile time.
+
+> [!check] Type Inference
+> The compiler can automatically deduce data types based on usage and context, but they must still be statically typed.
+
+> [!example] Lazy Evaluation
+> Data is only computed when necessary, more on this later.
 
 ---
 
@@ -39,6 +41,7 @@ Let's take a very simple Python script and work towards recreating it in Haskell
 ```Python
 def add_then_mult(a, b):
 	return (a+b) * a * b
+
 
 def main():
 	result = add_then_mult(4, 5)
@@ -89,6 +92,18 @@ And if we use the [[GHCi#Main Command|Main Command]] in GHCi to execute `main`, 
 ```
 
 Or, if you want to be fancy, you can put this script into a file like `main.hs` and run `ghc main.hs` on it. This will compile your program into a binary like `main.exe` which you can then execute in the terminal.
+
+```
+[nix-shell:~/programming/Dev/haskellTesting]$ ghc main.hs
+[1 of 2] Compiling Main             ( main.hs, main.o )
+[2 of 2] Linking main
+
+[nix-shell:~/programming/Dev/haskellTesting]$ ls
+main  main.hi  main.hs  main.o
+
+[nix-shell:~/programming/Dev/haskellTesting]$ ./main
+180
+```
 
 Yippee, you have just created your first executable Haskell program!
 

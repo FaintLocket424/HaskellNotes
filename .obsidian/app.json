@@ -1,3 +1,6 @@
 {
-  "propertiesInDocument": "hidden"
+  "propertiesInDocument": "hidden",
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./attachments"
 }

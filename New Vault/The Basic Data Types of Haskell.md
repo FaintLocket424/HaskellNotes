@@ -9,21 +9,23 @@ templates:
 template_version: "1"
 TARGET DECK: Programming Paradigms::Functional Programming
 ---
-> [!Important]
-> [[Haskell]] is a statically typed language, the type of every expression, function and variable must be known by the compiler at the time of compilation, or it will not compile.
+> [!Important] Important - Remember that [[Haskell]] is a statically typed language!
+> The type of every expression, function and variable must be known by the compiler at the time of compilation, or it will not compile.
 
-## "Has type of" Operator
+---
+
+## The "has type of" Operator
 
 Haskell implements the `::` operator, pronounced "has type of".
 
 ```Haskell
--- e has type of T
+-- "e" has type of T
 e :: T
 
--- False has type of Bool
+-- "False" has type of Bool
 False :: Bool
 
--- not has type of Bool -> Bool
+-- "not" has type of Bool -> Bool
 not :: Bool -> Bool
 ```
 
@@ -37,7 +39,7 @@ We're going to look at 9 of Haskell's most basic types,
 
 1. `Bool`
 2. `Int`
-3. `Integer` (yes, there's a difference)
+3. `Integer` (yes, there's a difference and they will exam you on it)
 4. `Float`
 5. `Double`
 6. `Char`
@@ -45,12 +47,14 @@ We're going to look at 9 of Haskell's most basic types,
 8. `()` (Tuples)
 9. `->` (Functions)
 
-You may notice that they all start with a capital letter, this is by design. If something starts with a capital letter, you know it's a type.
+You may notice that they all start with a capital letter and this is by design. **If something starts with a capital letter, you know it's a type.**
 
-Also note that Haskell deliberately has **no null**. This is solved using more complex data types that we will encounter later.
+Also note that Haskell deliberately has **no null** and this is a key feature of the language. "Possible Missing data" is representing using more complex data types that we will encounter later.
 
-> [!Important]
-> There's special constants in Haskell called `maxBound` and `minBound` which will give you the upper and lower bounds of a type, when they "have type of" the one you're interested in.
+> [!Important] A note for this section
+> You're going to see some special constants, `maxBound` and `minBound`, used in this section. When these constants "have type of" a given type, it will return the minimum or maximum value that type can represent.
+> 
+> Do not worry exactly how that works just yet.
 > 
 > ```Haskell
 > maxBound :: Int
@@ -66,7 +70,7 @@ Also note that Haskell deliberately has **no null**. This is solved using more c
 > -- * No instnace of (Bounded Float) arising from a use of `minBound'
 > ```
 > 
-> It only works for types which are bounded.
+> It only works for types which have an upper or lower bound.
 
 ### Bool
 
@@ -79,7 +83,7 @@ False :: Bool
 
 ### Int
 
-`Int` is for integers. It's represented as a signed long integer value, and as such is bound by the max/min values of a 64/32 bit integer (depending on hardware).
+`Int` is for whole numbers. It's represented as a signed long integer value, and as such is bound by the max/min values of a 64/32 bit integer (depending on hardware).
 
 ```Haskell
 7 :: Int
@@ -91,6 +95,8 @@ maxBound :: Int
 minBound :: Int
 --  -9223372036854775808
 ```
+
+In `C` these would be called a `long long`.
 
 ### Integer
 
@@ -135,7 +141,7 @@ pi :: Double
 
 We will go into much more detail about lists later, but for know just know that the type of a list is `[]`, and that it must have some other type inside of the brackets to be a valid type, `[Int]`.
 
-You can't have list type without specifying what the list is going to store.
+You can't have list type without specifying what the list is going to store, just like how you can't have an array in C without specifying the type it will store.
 
 ```Haskell
 [10, 20, 30] :: [Int]
@@ -146,13 +152,15 @@ You can't have list type without specifying what the list is going to store.
 
 "test" :: [Char]
 
-"Hey Nathaniel, I'm always watching" :: String
+"Hey Nathaniel, I've been expecting you..." :: String
 
-"wrong" :: []
+"invalid type definition" :: []
 -- * Expecting one more argument to `[]'
 ```
 
 Note that a `String` is just a list of characters, `[Char]`.
+
+And note that lists are variable length.
 
 ### Tuples
 
@@ -168,7 +176,7 @@ Tuples `()` are for fixed size, ordered collections that can be different types.
 () :: ()
 ```
 
-Note the last one, the empty tuple, called a "unit" and represents "no data". It is also technically a type, just a type that only has one possible value.
+Pay particular attention to the last one, the empty tuple. In Haskell it's called a "unit" and represents "no data".
 
 ### Functions
 
@@ -184,52 +192,54 @@ These are known as "function decorators" and are used to explicitly define a fun
 
 Here are a few examples:
 
-> [!Example] Example with `not`
-> Take the function `not`, which is a Boolean `¬` operator that takes a `Bool` as input and produces a new `Bool` as output. This would be decorated with:
+> [!Example] Example 1
+> Take the function `not`, which inverts a boolean. This function would take in a `Bool` and output a `Bool`, so would be decorated with:
 > 
 > ```Haskell
 > not :: Bool -> Bool
 > ```
 
-> [!Example] Example with `(+)`
-> Take the function `(+)`, which takes two `Int` arguments and returns their sum as a new `Int`.
+> [!Example] Example 2
+> Take the function `sum`, which takes two `Int` arguments and returns their sum as a new `Int`.
 > 
 > If you're used to other languages, you might think the decorator would be `(Int, Int) -> Int` but you would be wrong! That's a tuple with 2 integers in it!
 > 
 > In Haskell, due to reason's we'll discuss later (currying), multiparameter functions are defined like this:
 > 
 > ```Haskell
-> (+) :: Int -> Int -> Int
+> sum :: Int -> Int -> Int
 > -- Takes two Ints and returns an Int
 > ```
 
 > [!Example] Other examples
 > ```Haskell
-> (/) :: Float -> Float -> Float
+> div :: Float -> Float -> Float
 > -- Takes two Floats and returns a Float
 > 
 > reallyOddFunction :: Char -> (Bool, Int) -> String
 > -- Takes a Char and a (Bool, Int) tuple and returns a String.
 > ```
 
-### Functions as arguments
+#### Functions as arguments
 
 Functions in Haskell are "first-class", meaning they can be assigned to variables and passed as arguments into functions.
 
-And if you have a function that takes another function as an argument (known as a higher-order function, more on these later), this is represented in their type signature.
+This makes it possible to have a function which takes another function as an argument, known as a higher-order function.
+
+Say you have a list of integers, `[Int]` and you want to apply a function to every item in the list to get a new, transformed `[Int]`. To do this, you'd need a higher-order function like:
 
 ```Haskell
-map_int_to_float :: (Int -> Float) -> [Int] -> [Float]
+map :: (Int -> Int) -> [Int] -> [Int]
 ```
 
-This is a function which would take 2 arguments:
+Here our function takes two arguments:
 
-1. A function that converts integer `Int` values to float point `Float` values.
-2. A list of integer `Int` values.
+1. A function which transforms `Int` values into new `Int` values.
+2. A list of `Int` values to apply our function to.
 
-This function would then use the conversion on every value in the list, returning a new list where all the values are `Float`.
+And then it will return the new list of transformed values.
 
-This is an extremely important concept in Haskell and it is used absolutely everywhere, so make sure you understand what's happening before moving on.
+This is an extremely important concept in Haskell and it is used absolutely everywhere, so make sure you understand what's happening here before moving on.
 
 ---
 
@@ -245,12 +255,12 @@ Huh? What's this type `a`?
 
 **It's a Type Variable!** Notice how it doesn't start with a capital letter, therefore it's not a type per-say.
 
-These work much like generics in [[The Java Programming Language|Java]] or C#, allowing a function to accept multiple different types.
+These allow you to define a function which can work on multiple types, similar to generics in Java.
 
 For the `head` function:
 
-- If you pass it a list of integers `[Int]`, then it will return to you an `Int`.
-- If you pass it a string `[Char]` then it will return to you a `Char`.
+- If you use it on a list of integers, then it becomes `head :: [Int] -> Int`.
+- If you use it on a list of characters, then it becomes `head :: [Char] -> Char`.
 
 > [!example]
 > Think of it like it replaces `a` with the type which was input.
@@ -262,7 +272,7 @@ For the `head` function:
 > -- Say we first input an Int type, it would then "become"
 > func :: Int -> (b, Int) -> c -> (Int, b, c)
 > 
-> -- If we then input a [Char] type, it would be:
+> -- If we then input a ([Char], Int) type, it would be:
 > func :: Int -> ([Char], Int) -> c -> (Int, [Char], c)
 > 
 > -- If we then input a Float type:
