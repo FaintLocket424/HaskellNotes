@@ -31,7 +31,7 @@ When you create a function with 2 arguments, you're actually creating two functi
 1. The first function accepts the first argument. It then returns a new function with that argument "cached".
 2. The second function then accepts the second argument and computes the value, using the "cached" first argument.
 
-Does that make perfect sense and all is cleared up? No? Yeah thought so. Let's look at what this would look like in Python.
+Clear as mud? Right. Let's look at what this would look like in Python.
 
 If we were to rewrite `mult` using currying, it would look something like this:
 
@@ -44,12 +44,12 @@ def mult(a):
 mult(4)(5) # 20
 ```
 
-Now this is starting to look more like a Haskell function calling syntax.
+Notice how `mult(4)(5)` is starting to look like the way we call functions in Haskell, `mult 4 5`.
 
 Let's analyse what happens when we pass the first argument into the function, and replace `a` with `4`.
 
 ```Python
-def mult(4):
+def mult(a=4):
 	def mult_b(b):
 		return 4 * b
 	return mult_b
@@ -91,23 +91,60 @@ What happens if we don't give a function enough parameters?
 
 In any other language, this would be an immediate compile or runtime error. And it might be in Haskell, or it could be used intentionally.
 
-Take the function `add` which takes two arguments and sums them together.
+Take our function `mult` from before...
 
-```Haskell
-add :: Int -> Int -> Int
-add x y = x + y
+```Python
+def mult(a):
+	def mult_b(b):
+		return a * b
+	return mult_b
 ```
 
-We could use this to create a single argument function that adds 5 to it's argument.
+If we call `mult` with a single value, we end up with a new function.
+
+```Python
+double = mult(2)
+triple = mult(3)
+```
+
+We can then use these functions like normal:
+
+```Python
+double(2) # 4
+double(6) # 12
+
+triple(4) # 12
+triple(16) # 48
+```
+
+This is called partial function application, as we only gave `mult` one of it's two arguments.
+
+This is achieved in the same way in Haskell.
 
 ```Haskell
-addFive :: Int -> Int
-addFive = add 5
+mult a b = a * b
 
-addFive 5 -- 10
-addFive 25 -- 30
-addFive (-5) -- 0
+mult 4 5 -- 20
+
+double = mult 2
+triple = mult 3
+
+double 4 -- 8
+triple 16 -- 48
 ```
+
+> [!important] Note how we defined `double` and `triple`
+> Notice how we omitted the argument from the definition of `double` and `triple`.
+> 
+> We could have done `double b = mult 2 b` but it's redundant since `mult 2` already returns a function of a single argument.
+> 
+> In fact, we can take this even further and define `mult` with even less syntax.
+> 
+> ```Haskell
+> mult = (*)
+> ```
+> 
+> Fun!
 
 Another example could be the `filter` function.
 
@@ -126,6 +163,8 @@ filterEven = filter isEven
 filterEven [1,2,3,4]
 -- [2,4]
 ```
+
+You'll notice more and more that the order of the arguments in all of the built in functions are designs to facilitate this. Almost always the "data being operated on" will be the final argument because you would rarely ever partially apply a function with the data itself. You would usually set up a reusable "customised" function which 
 
 ---
 
