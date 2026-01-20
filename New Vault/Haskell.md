@@ -52,6 +52,8 @@ We're passing in two numbers, $a=4$ and $b=5$ then returning their sum $a+b$, mu
 
 > [!NOTE]
 > The first thing you'll need to do is install GHCup. To do so, go to https://www.haskell.org/ghcup/ and run the installer. Note that some steps may take like 10 minutes.
+> 
+> You can accept the default settings
 
 To recreate the function body, we use some [[Simple Haskell Expressions]] and find out *it's exactly the same*.
 
