@@ -1,16 +1,3 @@
----
-categories:
-  - "[[Module Notes]]"
-module: "[[Functional Programming Module]]"
-authors:
-  - "[[Matthew]]"
-templates:
-  - "[[Module Note Template]]"
-template_version: "1"
-TARGET DECK: Programming Paradigms::Functional Programming
-aliases:
-  - Pure Function
----
 ## Criteria for a function to be pure
 
 1. The function must be **deterministic**. The exact same input arguments must always produce the exact same output return value.

@@ -1,16 +1,3 @@
----
-categories:
-  - "[[Module Notes]]"
-module: "[[Functional Programming Module]]"
-authors:
-  - "[[Matthew]]"
-templates:
-  - "[[Module Note Template]]"
-template_version: "1"
-TARGET DECK: Programming Paradigms::Functional Programming
-aliases:
-  - Pattern Matching
----
 So far, when we've written functions, they've been defined in a single way:
 
 ```Haskell

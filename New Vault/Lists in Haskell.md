@@ -1,14 +1,3 @@
----
-categories:
-  - "[[Module Notes]]"
-module: "[[Functional Programming Module]]"
-authors:
-  - "[[Matthew]]"
-templates:
-  - "[[Module Note Template]]"
-template_version: "1"
-TARGET DECK: Programming Paradigms::Functional Programming
----
 ## Creating Lists
 
 Lists are created in Haskell using square brackets like most other languages.

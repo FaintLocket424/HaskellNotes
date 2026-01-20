@@ -1,14 +1,3 @@
----
-categories:
-  - "[[Module Notes]]"
-module: "[[Functional Programming Module]]"
-authors:
-  - "[[Matthew]]"
-templates:
-  - "[[Module Note Template]]"
-template_version: "1"
-TARGET DECK: Programming Paradigms::Functional Programming
----
 ## Using Built-In Functions 
 
 Before learning how to create our own functions, it's probably useful to first learn how to use a function in Haskell.
@@ -76,7 +65,7 @@ pow 2 6
 -- 64
 ```
 
-If you really wanted to put brackets around it, you would do it as `pow (2) (6)`. But don't unless you have to.
+If you really wanted to put brackets around it, you would do it as `pow (2) (6)`. But don't, unless you *have* to.
 
 > [!warning]
 > Note the error message we get if we supply too few parameters to `pow`:
@@ -161,7 +150,7 @@ The first step when creating a function is determining the type. If you think ba
 
 But this is actually more restrictive than necessary, and it's always best to use the least restrictive decorator possible. What if we used an `Int`? Or a `Float`? The multiplication `(*)` function will work with all these types, so why not allow our function to accept them?
 
-Instead, we can use a [[The Basic Type Classes of Haskell#Class Constraints|Class Constraint]] to specify that our function will input and output any type in the `Num` typeclass.
+Instead, we can use a [[The Basic Type Classes of Haskell#Class Constraints|Class Constraint]] to specify that our function will input and output any type in the `Num` type class.
 
 ```Haskell
 double :: (Num a) => a -> a
@@ -223,7 +212,7 @@ In other languages, operators like `(+)`, `(-)` or `(*)` are just syntax. In Has
 Naturally, all infix functions are binary operators (functions of 2 arguments) like the ones mentioned above.
 
 > [!important]
-> It's important to note that there is no difference between these infix functions and the other functions in Haskell. They are simply defined using symbols instead of words. Any function in Haskell that is defined with a symbol automatically becomes an infix function, and you can define your own with unused symbols like `#`.
+> It's important to note that there is no difference between these infix functions and the other functions in Haskell. They are simply defined using symbols instead of words. Any binary function in Haskell that is defined with a symbol automatically becomes an infix function, and you can define your own with unused symbols like `#`.
 > 
 > And any time you are referencing an infix function in Haskell, like passing it as an argument to a different function, you surround them in brackets, like so `(+)`.
 
@@ -253,7 +242,7 @@ pow 2 3
 -- 8.0
 ```
 
-Using \`backticks\`, you can use a prefix function as an infix operator, provided it's a binary function.
+Using \`backticks\`, you can use a prefix function as an infix operator, provided it's a binary function. This is often uses to write ```7 `mod` 2```.
 
 ### Creating Our Own Infix Functions
 

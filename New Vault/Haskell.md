@@ -1,14 +1,3 @@
----
-categories:
-  - "[[Module Notes]]"
-module: "[[Functional Programming Module]]"
-authors:
-  - "[[Matthew]]"
-templates:
-  - "[[Module Note Template]]"
-template_version: "1"
-TARGET DECK: Programming Paradigms::Functional Programming
----
 ## Properties of Haskell
 
 Haskell is a [[The Functional Programming Paradigm|Purely Functional]] language with:
@@ -53,7 +42,7 @@ We're passing in two numbers, $a=4$ and $b=5$ then returning their sum $a+b$, mu
 > [!NOTE]
 > The first thing you'll need to do is install GHCup. To do so, go to https://www.haskell.org/ghcup/ and run the installer. Note that some steps may take like 10 minutes.
 > 
-> You can accept the default settings
+> You can accept the default settings at each stage, but it's probable you want the HLS (Haskell Language Server) for syntax highlighting in VSCode.
 
 To recreate the function body, we use some [[Simple Haskell Expressions]] and find out *it's exactly the same*.
 

@@ -1,16 +1,3 @@
----
-categories:
-  - "[[Module Notes]]"
-module: "[[Functional Programming Module]]"
-authors:
-  - "[[Matthew]]"
-templates:
-  - "[[Module Note Template]]"
-template_version: "1"
-TARGET DECK: Programming Paradigms::Functional Programming
-aliases:
-  - Currying
----
 Currying is a fundamental concept in [[Haskell]] where a function that appears to take multiple arguments is actually treated as a sequence of functions.
 
 The "curry" in currying is a reference to logician Haskell Curry, whose name you might recognise as Haskell is named after him.

@@ -1,13 +1,3 @@
----
-categories:
-  - "[[Module Notes]]"
-module: "[[Functional Programming Module]]"
-authors: 
-templates:
-  - "[[Module Note Template]]"
-template_version: "1"
-TARGET DECK: Programming Paradigms::Functional Programming
----
 Many imperative languages have a "switch case" expression. Some way of running a piece of code depending on the value of a variable.
 
 ```Python

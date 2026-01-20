@@ -1,15 +1,4 @@
----
-categories:
-  - "[[Module Notes]]"
-module: "[[Functional Programming Module]]"
-authors:
-  - "[[Matthew]]"
-templates:
-  - "[[Module Note Template]]"
-template_version: "1"
-TARGET DECK: Programming Paradigms::Functional Programming
----
-(You need to have installed GHCup in order to have `ghci`)
+(You need to have installed [GHCup](https://www.haskell.org/ghcup/) in order to have `ghci`)
 ## Running GHCi
 
 Open PowerShell and type `ghci` into the terminal.
@@ -42,12 +31,14 @@ not :: Bool -> Bool
  ---
 ## Info Command
 
-You can ask GHCi for information about a type, typeclass, function etc. with the `:i` or `:info` command.
+You can ask GHCi for information about a [[The Basic Data Types of Haskell|Type]], [[The Basic Type Classes of Haskell|Type Class]], function etc. with the `:i` or `:info` command.
 
 ```Haskell
 :i not
 not :: Bool -> Bool     -- Defined in `GHC.Classes'
 ```
+
+This tells us that the `not` function has type `Bool -> Bool`.
 
 ```Haskell
 :i Num
@@ -68,6 +59,10 @@ instance Num Int -- Defined in `GHC.Num'
 instance Num Integer -- Defined in `GHC.Num'
 instance Num Word -- Defined in `GHC.Num'
 ```
+
+This tells us that types in the `Num` class support methods `(+)`, `(-)`, `(*)`, `fromInteger` etc.
+
+It also tells us that `Double`, `Float`, `Int`, `Integer` and `Word` are all instances of `Num`.
 
 ```Haskell
 :i Integer
@@ -96,6 +91,8 @@ You can load a Haskell `.hs` source code file with the `:l` or `:load` command.
 ```Haskell
 :l yellowstone
 ```
+
+This will load `yellowstone.hs` into GHCi.
 
 ### Main Command
 

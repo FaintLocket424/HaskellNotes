@@ -1,14 +1,3 @@
----
-categories:
-  - "[[Module Notes]]"
-module: "[[Functional Programming Module]]"
-authors:
-  - "[[Matthew]]"
-templates:
-  - "[[Module Note Template]]"
-template_version: "1"
-TARGET DECK: Programming Paradigms::Functional Programming
----
 A programming paradigm where the building blocks of computation is the **application of functions** to arguments.
 
 ---
@@ -55,7 +44,7 @@ Many languages are **multiparadigm**, and support functional elements. These inc
 
 - Python
 - JavaScript
-- [[The Java Programming Language|Java]]
+- Java
 - C#
 - Kotlin
 

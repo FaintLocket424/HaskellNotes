@@ -1,16 +1,3 @@
----
-categories:
-  - "[[Module Notes]]"
-module: "[[Functional Programming Module]]"
-authors:
-  - "[[Matthew]]"
-templates:
-  - "[[Module Note Template]]"
-template_version: "1"
-TARGET DECK: Programming Paradigms::Functional Programming
-aliases:
-  - Side Effect
----
 > [!important] Side Effect 
 > A side effect is a state change that results from a function modifying objects external to its parameter list, like a global variable.
 

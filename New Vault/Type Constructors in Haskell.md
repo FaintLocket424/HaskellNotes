@@ -1,14 +1,3 @@
----
-categories:
-  - "[[Module Notes]]"
-module: "[[Functional Programming Module]]"
-authors:
-  - "[[Matthew]]"
-templates:
-  - "[[Module Note Template]]"
-template_version: "1"
-TARGET DECK: Programming Paradigms::Functional Programming
----
 Type Constructors are used to build complex types from simple ones.
 
 You know how I said everything was a function in Haskell? Well, type constructors are functions that apply to types. Yeah.

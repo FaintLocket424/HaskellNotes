@@ -1,14 +1,9 @@
 ---
-categories:
-  - "[[Module Notes]]"
-module: "[[Functional Programming Module]]"
-authors:
-  - "[[Matthew]]"
-templates:
-  - "[[Module Note Template]]"
-template_version: "1"
-TARGET DECK: Programming Paradigms::Functional Programming
+aliases:
+  - Type Classes
 ---
+
+
 ## Classes in Haskell
 
 > [!danger] Potential Misconception about Haskell Classes
@@ -152,9 +147,21 @@ But actually, it's not, it's a `Num`.
 > 
 > This is what is happening when we do `20 :: Int` vs `20 :: Float`. In other languages, this is all handled automatically, but in Haskell it happens as a consequence of the type system.
 > 
+> It's kind of like doing this in Python, but ofc you would never actually do this:
+> 
+> ```python
+> def getTwenty(type):
+> 	if (type == int):
+> 		return 20
+> 	elif (type == float):
+> 		return 20.0
+> 	else:
+> 		raise TypeError("Invalid type for 20")
+> ```
+> 
 > This is also how the `minBound` and `maxBound` constants work. The constants take different values based on their type.
 
-### Integral 
+### Integral
 
 The `Integral` class represents whole numbers: `Int` and `Integer`.
 
