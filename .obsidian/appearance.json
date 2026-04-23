@@ -4,5 +4,6 @@
   "interfaceFontFamily": "Inter",
   "monospaceFontFamily": "JetBrains Mono",
   "textFontFamily": "Inter",
-  "baseFontSizeAction": true
+  "baseFontSizeAction": true,
+  "baseFontSize": 19
 }
