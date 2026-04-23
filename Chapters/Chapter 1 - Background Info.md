@@ -1,3 +1,5 @@
+> Previous: [[README]]
+
 As you probably know, Haskell is a functional programming language. It was designed back in 1990 which makes it 18 years newer than C and 22 years younger than TypeScript. It's also just **one year older than Python**, seriously.
 
 ![[meme_they_dont_know_haskell.png|350]]

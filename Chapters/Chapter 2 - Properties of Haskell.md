@@ -1,3 +1,5 @@
+> Previous: [[Chapter 1 - Background Info]]
+
 Haskell does many things different to other languages. While most languages have at least one of these properties, it's the combination of all of them that makes Haskell unique.
 
 > [!info] Strong Static Typing

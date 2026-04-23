@@ -1,3 +1,5 @@
+> Previous: [[Chapter 4 - The Basic Types of Haskell]]
+
 Take this Python snippet:
 
 ```python

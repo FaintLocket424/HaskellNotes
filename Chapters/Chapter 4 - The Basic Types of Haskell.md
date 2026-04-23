@@ -1,3 +1,5 @@
+> Previous: [[Chapter 3 - The Functional Paradigm]]
+
 Before we look at any Haskell code, it's important to understand the data types available to you in Haskell, and how they are represented.
 
 > [!Important] Remember that Haskell is a statically typed language!

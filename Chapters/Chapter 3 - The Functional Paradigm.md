@@ -1,3 +1,5 @@
+> Previous: [[Chapter 2 - Properties of Haskell]]
+
 > [!quote] A programming paradigm where the building blocks of computation is the **application of functions to arguments**.
 
 What this means is that everything you do in Haskell is just put values into functions, then get the result of that and put it into a different function. That's it.
