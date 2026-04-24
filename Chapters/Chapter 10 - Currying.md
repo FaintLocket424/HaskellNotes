@@ -1,3 +1,5 @@
+> Previous: [[Chapter 9 - Functions in Haskell]]
+
 ![[meme_function_curry.png|300]]
 
 Currying is a fundamental concept in Haskell where a function that appears to take multiple arguments is actually treated a sequence of functions.
@@ -250,3 +252,5 @@ filterSmallNumbers [1..10] -- [6,7,8,9,10]
 > method_5 10
 > -- 10 - 3 = 7
 > ```
+
+> Next: [[Chapter 11 - Lists]]
