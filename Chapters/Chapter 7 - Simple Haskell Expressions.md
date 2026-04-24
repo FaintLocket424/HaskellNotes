@@ -4,7 +4,7 @@ My goal over the next few chapters is to recreate a simple Python program in Has
 
 ```Python
 def add_then_mult(a, b):
-	return (a+b) * a * b
+	return (a + b) * a * b
 
 
 def main():
@@ -101,3 +101,45 @@ And they also work how you'd expect.
 ```
 
 ---
+
+## Boolean Expressions 
+
+Haskell implements your standard Boolean AND, OR and NOT comparisons.
+
+1. Logical AND: `a && b`
+2. Logical OR: `a || b`
+3. Logical NOT: `not a`
+
+```Haskell
+True && True
+-- True
+
+False && True
+-- False
+
+False || False
+-- False
+
+True || False
+-- True
+
+not True
+-- False
+```
+
+---
+## Back To the Example
+
+The function body in python is `(a + b) * a * b` and in Haskell it's...
+
+```Haskell
+(a + b) * a * b
+```
+
+wow
+
+It's the same.
+
+In the next part you'll learn how to define the function.
+
+> Next: [[Chapter 8 - Defining Functions]]

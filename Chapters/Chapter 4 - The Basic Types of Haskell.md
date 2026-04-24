@@ -186,7 +186,7 @@ func :: String -> Int -> Float
 -- A function that takes a String and an Int and outputs a Float.
 ```
 
-There will be a lot more on this later in the [[Chapter TODO - Defining Functions]].
+There will be a lot more on this later in the [[Chapter 8 - Defining Functions]].
 
 > [!important] Functions can be arguments!
 > Just like how you can pass a `Float` into a function, you can also pass a function as a parameter. This is because functions are **First-Class** in Haskell.
