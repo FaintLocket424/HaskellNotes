@@ -57,4 +57,4 @@ zip :: [a] -> [b] -> [(a, b)]
 > 
 > But then, what happens if you try and put two `Char`s into it? Universe collapses. To solve this problem, we need **Class Constraints**, explained in the next section.
 
-> Next: [[Chapter 6 - Class Constraints]]
+> Next: [[Chapter 6 - Type Classes]]
