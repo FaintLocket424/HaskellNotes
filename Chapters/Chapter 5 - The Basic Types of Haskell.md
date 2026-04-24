@@ -44,7 +44,7 @@ In this section, we're going to look at 9 of Haskell's most basic types. There a
 
 > [!info] Notice how they all start with a capital letter and this is by design. **If something starts with a capital letter, you know it's a type.** This is even enforced when you go and make your own types later.
 
-Also note that Haskell has **no `null`** and this is again, by design, and a feature of the language. When data is possibly missing, we have more complex data types that we will encounter later that account for this.
+Also note that Haskell has **no `null`** and this is again, by design, and a feature of the language. When data is possibly missing, we have more complex data types that we will encounter later that account for this ([[Chapter 13 - The Maybe Type]]).
 
 ### Bool
 
