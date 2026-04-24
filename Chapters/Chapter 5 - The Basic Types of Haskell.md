@@ -191,7 +191,7 @@ func :: String -> Int -> Float
 There will be a lot more on this later on in [[Chapter 9 - Functions in Haskell]].
 
 > [!important] Functions can be arguments!
-> Just like how you can pass a `Float` into a function, you can also pass a function as a parameter. This is because functions are **First-Class** in Haskell.
+> Just like how you can pass a `Float` into a function, you can also pass a function as a parameter. This is because functions are **First-Class** in Haskell. A function that accepts another function as a parameter is known as a "Higher Order Function".
 > 
 > ```Haskell
 > mapInt :: (Int -> Int) -> [Int] -> [Int]
