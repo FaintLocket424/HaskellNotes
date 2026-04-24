@@ -142,4 +142,4 @@ It's the same.
 
 In the next part you'll learn how to define the function.
 
-> Next: [[Chapter 8 - Defining Functions]]
+> Next: [[Chapter 8 - Functions in Haskell]]
