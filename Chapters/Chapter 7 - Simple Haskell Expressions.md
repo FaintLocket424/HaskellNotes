@@ -66,3 +66,38 @@ If you open GHCi and type in these expressions, you should get the results you e
 > `(^)` takes any number and raises it to an integer power, whereas `(**)` works with floating point exponents.
 
 ---
+
+## Comparison Expressions
+
+Haskell implements all the comparison operators that you would expect:
+
+1. Equality: `==`
+2. Inequality: `/=`
+3. Less than: `<`
+4. Less than or equal to: `<=`
+5. Greater than: `>`
+6. Greater than or equal to `>=`
+
+And they also work how you'd expect.
+
+```Haskell
+3 == 3
+-- True
+
+3 /= 2
+-- True
+
+10 < 1
+-- False
+
+3 <= 7
+-- True
+
+3 > 1
+-- True
+
+4 >= 6
+-- False
+```
+
+---
