@@ -14,11 +14,6 @@ def main():
 
 We're passing two numbers $a=4$ and $b=5$ then returning their sum $a+b$ multiplied by $a \times b$. We then print the result to the screen.
 
-> [!NOTE]
-> The first thing you'll need to do is install GHCup. To do so, go to https://www.haskell.org/ghcup/ and run the installer. Note that some steps may take like 10 minutes.
-> 
-> You can accept the default settings at each stage, but it's probable you want the HLS (Haskell Language Server) for syntax highlighting in VSCode.
-
 ---
 ## Arithmetic Expressions
 
@@ -130,7 +125,7 @@ not True
 ---
 ## Back To the Example
 
-The function body in python is `(a + b) * a * b` and in Haskell it's...
+In our examples, the function body in Python is `(a + b) * a * b` and in Haskell it's...
 
 ```Haskell
 (a + b) * a * b
@@ -140,6 +135,6 @@ wow
 
 It's the same.
 
-In the next part you'll learn how to define the function.
+In the next part you'll learn how to define the function itself.
 
 > Next: [[Chapter 8 - Functions in Haskell]]
