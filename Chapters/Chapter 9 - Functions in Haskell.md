@@ -1,4 +1,4 @@
-> Previous: [[Chapter 7 - Simple Haskell Expressions]]
+> Previous: [[Chapter 8 - Simple Haskell Expressions]]
 
 ## Using Built-In Functions 
 
@@ -58,7 +58,7 @@ Print a function? But this is supposed to return a number?
 
 Well actually, we only gave it one of the two parameters it was expecting.
 
-If you remember back to [[Chapter 4 - The Basic Types of Haskell]], we'll see that `(2,6)` is actually a tuple of size 2 and type `(Integer, Integer)`. That's why we see that in the error message.
+If you remember back to [[Chapter 5 - The Basic Types of Haskell]], we'll see that `(2,6)` is actually a tuple of size 2 and type `(Integer, Integer)`. That's why we see that in the error message.
 
 The correct way to call this function is this:
 
@@ -375,4 +375,4 @@ main  main.hi  main.hs  main.o
 
 Yippee, you have just created your first executable Haskell program!
 
-> Next: [[Chapter 9 - Currying]]
+> Next: [[Chapter 10 - Currying]]

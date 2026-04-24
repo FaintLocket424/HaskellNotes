@@ -2,7 +2,7 @@
 
 > [!quote] A programming paradigm where the building blocks of computation is the **application of functions to arguments**.
 
-What this means is that everything you do in Haskell is just put values into functions, then get the result of that and put it into a different function. That's it.
+What this means is that everything you do in Haskell is just putting values into functions, then getting the result of that and putting it into a different function. That's it.
 
 ![[meme_wait_its_all.jpg|500]]
 
@@ -173,4 +173,4 @@ My argument to you is this:
 
 Also, if there's anything you should take away from this module it's this: **stop using global variables**. Just pretend they don't exist.
 
-> Next: [[Chapter 4 - The Basic Types of Haskell]]
+> Next: [[Chapter 4 - Installing the Haskell Toolchain]]

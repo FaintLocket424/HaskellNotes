@@ -1,4 +1,4 @@
-> Previous: [[Chapter 4 - The Basic Types of Haskell]]
+> Previous: [[Chapter 5 - The Basic Types of Haskell]]
 
 Take this Python snippet:
 
@@ -13,7 +13,7 @@ head("hello") # 'h'
 
 Notice how we were able to input both a list of integers, and a string (list of characters) into the same function? That's *polymorphism*! Using what you know about Haskell currently, this is impossible. To make it possible, I will introduce to you **Type Variables**.
 
-The `head` functions actually exists in the Haskell standard library, and its type decorator is this:
+The `head` functions actually exists in the Haskell standard library, and here is its type signature:
 
 ```Haskell
 head :: [a] -> a
@@ -57,4 +57,4 @@ zip :: [a] -> [b] -> [(a, b)]
 > 
 > But then, what happens if you try and put two `Char`s into it? Universe collapses. To solve this problem, we need **Class Constraints**, explained in the next section.
 
-> Next: [[Chapter 6 - Type Classes]]
+> Next: [[Chapter 7 - Type Classes]]

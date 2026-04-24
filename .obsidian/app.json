@@ -1,5 +1,12 @@
 {
   "attachmentFolderPath": "Attachments",
   "alwaysUpdateLinks": true,
-  "openBehavior": "file:README"
+  "openBehavior": "file:README",
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 88
+  }
 }

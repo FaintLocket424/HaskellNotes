@@ -1,4 +1,4 @@
-> Previous: [[Chapter 6 - Type Classes]]
+> Previous: [[Chapter 7 - Type Classes]]
 
 My goal over the next few chapters is to recreate a simple Python program in Haskell.
 
@@ -137,4 +137,4 @@ It's the same.
 
 In the next part you'll learn how to define the function itself.
 
-> Next: [[Chapter 8 - Functions in Haskell]]
+> Next: [[Chapter 9 - Functions in Haskell]]

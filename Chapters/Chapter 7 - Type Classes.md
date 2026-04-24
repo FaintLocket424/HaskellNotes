@@ -1,4 +1,4 @@
-> Previous: [[Chapter 5 - Type Variables]]
+> Previous: [[Chapter 6 - Type Variables]]
 
 > [!danger] Potential Misconception about Haskell Classes
 > Note that the definition of a class in Haskell is not the same as in **Object Orientated Programming**.
@@ -213,4 +213,51 @@ You can also have multiple class constraints.
 someFunction :: (Num a, Ord b) => a -> b
 ```
 
-> Next: [[Chapter 7 - Simple Haskell Expressions]]
+---
+## Investigating Type Classes in GHCi
+
+We can use the `:info` or `:i` command in `ghci` to learn more about a specific type or type class
+
+```GHCi
+ghci> :i Double  
+type Double :: *  
+data Double = GHC.Types.D# GHC.Prim.Double#  
+       -- Defined in ‘GHC.Types’  
+instance Floating Double -- Defined in ‘GHC.Internal.Float’  
+instance RealFloat Double -- Defined in ‘GHC.Internal.Float’  
+instance Read Double -- Defined in ‘GHC.Internal.Read’  
+instance Enum Double -- Defined in ‘GHC.Internal.Float’  
+instance Eq Double -- Defined in ‘GHC.Classes’  
+instance Fractional Double -- Defined in ‘GHC.Internal.Float’  
+instance Num Double -- Defined in ‘GHC.Internal.Float’  
+instance Ord Double -- Defined in ‘GHC.Classes’  
+instance RealFrac Double -- Defined in ‘GHC.Internal.Float’  
+instance Real Double -- Defined in ‘GHC.Internal.Float’  
+instance Show Double -- Defined in ‘GHC.Internal.Float’
+```
+
+Running it on a type shows you all the type classes the type is an instance of. We can see here that `Double` is an instance of `Floating`, `Read`, `Enum`, `Eq` etc.
+
+```GHCi
+ghci> :i Num  
+type Num :: * -> Constraint  
+class Num a where  
+ (+) :: a -> a -> a  
+ (-) :: a -> a -> a  
+ (*) :: a -> a -> a  
+ negate :: a -> a  
+ abs :: a -> a  
+ signum :: a -> a  
+ fromInteger :: Integer -> a  
+ {-# MINIMAL (+), (*), abs, signum, fromInteger, (negate | (-)) #-}  
+       -- Defined in ‘GHC.Internal.Num’  
+instance Num Double -- Defined in ‘GHC.Internal.Float’  
+instance Num Float -- Defined in ‘GHC.Internal.Float’  
+instance Num Int -- Defined in ‘GHC.Internal.Num’  
+instance Num Integer -- Defined in ‘GHC.Internal.Num’  
+instance Num Word -- Defined in ‘GHC.Internal.Num’
+```
+
+Running it on a type class shows the methods that class implements, and the types which are instances of it. We can see here that `Num` implements `(+)`, `(-)`, `(*)`, `abs` etc. and that `Double`, `Float`, `Int`, `Integer` are all instances of the class.
+
+> Next: [[Chapter 8 - Simple Haskell Expressions]]

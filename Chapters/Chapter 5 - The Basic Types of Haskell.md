@@ -1,4 +1,4 @@
-> Previous: [[Chapter 3 - The Functional Paradigm]]
+> Previous: [[Chapter 4 - Installing the Haskell Toolchain]]
 
 Before we look at any Haskell code, it's important to understand the data types available to you in Haskell, and how they are represented.
 
@@ -71,7 +71,7 @@ False :: Bool
 -- 119448532308550851
 ```
 
-Shown above is what happens if you try and input that statement in `ghci` (You'll find out what that is later).
+> Shown above is what happens if you try and input that statement in `ghci`.
 
 In C these would be called a `long long`.
 
@@ -90,8 +90,8 @@ In C these would be called a `long long`.
 
 ```Haskell
 3.4 :: Float -- 3.4
-2   :: Float -- 2.0
 pi  :: Float -- 3.1415927
+1.234567890123 :: Float -- 1.2345679
 ```
 
 ### Double
@@ -100,9 +100,11 @@ pi  :: Float -- 3.1415927
 
 ```Haskell
 3.4 :: Double -- 3.4
-2   :: Double -- 2.0
 pi  :: Double -- 3.141592653589793
+1.234567890123 :: Double -- 1.234567890123
 ```
+
+With doubles, you get more significant figures in your numbers.
 
 ### Char
 
@@ -186,7 +188,7 @@ func :: String -> Int -> Float
 -- A function that takes a String and an Int and outputs a Float.
 ```
 
-There will be a lot more on this later in the [[Chapter 8 - Functions in Haskell]].
+There will be a lot more on this later on in [[Chapter 9 - Functions in Haskell]].
 
 > [!important] Functions can be arguments!
 > Just like how you can pass a `Float` into a function, you can also pass a function as a parameter. This is because functions are **First-Class** in Haskell.
@@ -197,6 +199,31 @@ There will be a lot more on this later in the [[Chapter 8 - Functions in Haskell
 > 
 > The function `mapInt` takes a function (that maps ints to ints) and a list of ints, and outputs a list of ints.
 
-> Next: [[Chapter 5 - Type Variables]]
+---
+## Investigating Types In GHCi
+
+We can use `ghci` to investigate the type of an expression with the `:type` command (or `:t` for short).
+
+```GHCi
+ghci> :t ['a', 'b', 'c']
+['a', 'b', 'c'] :: [Char]
+
+ghci> :t "abc"
+"abc" :: String
+
+ghci> :t mapInt
+mapInt :: (Int -> Int) -> [Int] -> [Int]
+
+ghci> :t [10, 20, 30]  
+[10, 20, 30] :: (Num a) => [a]
+```
+
+Right now, this isn't massively useful since you haven't defined your own functions yet, and most of the build in functions use something you haven't learnt about yet (see the last example).
+
+I just want you to know this command exists because it's really useful. Remember that Haskell has type inference, and it will figure out the best type to give a function you input. So later on, you can write or import a function into GHCi and ask it for what it thinks the type is. You can then use this to work out why that's the type.
+
+It's also useful for investigating the functions in the standard library.
+
+> Next: [[Chapter 6 - Type Variables]]
 
 
