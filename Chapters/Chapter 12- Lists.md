@@ -1,4 +1,4 @@
-> Previous: [[Chapter 10 - Currying]]
+> Previous: [[Chapter 11 - Type Constructors]]
 
 ## Creating Lists
 
@@ -300,4 +300,4 @@ Remove the first `n` elements that satisfy a given function with `dropWhile`
 dropWhile (<5) [1, 3, 6, 4, 9] == [6, 4, 9]
 ```
 
-> Next: [[Chapter 12 - Type Constructors]]
+> Next: [[Chapter 13 - The Maybe Type]]

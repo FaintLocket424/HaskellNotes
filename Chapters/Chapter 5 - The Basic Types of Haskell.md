@@ -125,7 +125,7 @@ With doubles, you get more significant figures in your numbers.
 
 ### Lists
 
-Lists are covered much more extensively in [[Chapter TODO - Lists]], but here's the basics. A list is a collection of items with the **same data type**.
+Lists are covered much more extensively in [[Chapter 12- Lists]], but here's the basics. A list is a collection of items with the **same data type**.
 
 The type of a list is `[a]`, where `a` must be a "concrete type". You'll find out what that means exactly soon but for now, think of it as a simple type that fully describes itself like `Int`, `Char`, `Bool`.
 

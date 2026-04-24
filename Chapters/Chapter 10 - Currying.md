@@ -253,4 +253,4 @@ filterSmallNumbers [1..10] -- [6,7,8,9,10]
 > -- 10 - 3 = 7
 > ```
 
-> Next: [[Chapter 11 - Lists]]
+> Next: [[Chapter 11 - Type Constructors]]
