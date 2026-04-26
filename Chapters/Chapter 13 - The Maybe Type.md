@@ -1,4 +1,4 @@
-> Previous: [[Chapter 12- Lists]]
+> Previous: [[Chapter 12 - Lists]]
 
 As I mentioned in [[Chapter 5 - The Basic Types of Haskell]], Haskell has no `null` value. Instead, we handle possible values with the `Maybe a` type.
 
@@ -98,3 +98,5 @@ The problem is the phone number formatting. We don't check that the user ID retu
 > [!check] In Haskell, this scenario is impossible because we are **forced to handle the `Nothing` case**.
 
 Take the `locateItem` function from before, that returns a `Maybe Int`. Let's say we wanted to get the index right after the first `'a'`. In most languages, you would just do something like `locateItem(lst, 'a') + 1` but this doesn't work in Haskell because you cannot add an `Int` and a `Maybe Int`. You first must 
+
+TODO: come back to this when I've explained things like pattern matching or case expressions

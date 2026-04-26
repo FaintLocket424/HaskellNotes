@@ -46,4 +46,4 @@ Most type constructors have a syntax like `Type a` or `Type a b`, where you woul
 > 
 > Notice how the kind syntax looks like the function syntax, this is by design. A type constructor is a function on types and so a kind of `* -> *` means it takes 1 concrete type and returns a concrete type, but `* -> * -> *` means it takes 2 concrete types and returns a concrete type.
 
-> Next: [[Chapter 12- Lists]]
+> Next: [[Chapter 12 - Lists]]
