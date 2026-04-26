@@ -1,4 +1,4 @@
-> Previous: [[Chapter 12 - Lists]]
+> Previous: [[Chapter 16 - Lists]]
 
 As I mentioned in [[Chapter 5 - The Basic Types of Haskell]], Haskell has no `null` value. Instead, we handle possible values with the `Maybe a` type.
 

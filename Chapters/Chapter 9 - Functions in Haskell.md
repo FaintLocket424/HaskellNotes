@@ -375,4 +375,4 @@ main  main.hi  main.hs  main.o
 
 Yippee, you have just created your first executable Haskell program!
 
-> Next: [[Chapter 10 - Currying]]
+> Next: [[Chapter 10 - Pattern Matching]]

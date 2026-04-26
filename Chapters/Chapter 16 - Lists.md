@@ -1,4 +1,4 @@
-> Previous: [[Chapter 11 - Type Constructors]]
+> Previous: [[Chapter 15 - Type Constructors]]
 
 ## Creating Lists
 
@@ -290,7 +290,7 @@ takeWhile (<5) [1, 3, 6, 4, 9] == [1, 3]
 ```
 
 > [!warning] Currying
-> If the `(<5)` looks weird to you, go back to [[Chapter 10 - Currying]] to understand why this works.
+> If the `(<5)` looks weird to you, go back to [[Chapter 14 - Currying]] to understand why this works.
 
 ### Drop While 
 
@@ -300,4 +300,4 @@ Remove the first `n` elements that satisfy a given function with `dropWhile`
 dropWhile (<5) [1, 3, 6, 4, 9] == [6, 4, 9]
 ```
 
-> Next: [[Chapter 13 - The Maybe Type]]
+> Next: [[Chapter 17 - The Maybe Type]]

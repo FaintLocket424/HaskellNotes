@@ -1,4 +1,4 @@
-> Previous: [[Chapter 9 - Functions in Haskell]]
+> Previous: [[Chapter 13 - Local Bindings]]
 
 ![[meme_function_curry.png|300]]
 
@@ -253,4 +253,4 @@ filterSmallNumbers [1..10] -- [6,7,8,9,10]
 > -- 10 - 3 = 7
 > ```
 
-> Next: [[Chapter 11 - Type Constructors]]
+> Next: [[Chapter 15 - Type Constructors]]
