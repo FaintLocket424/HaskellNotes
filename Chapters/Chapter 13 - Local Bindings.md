@@ -116,4 +116,19 @@ By defining a function inside a more local scope, you avoid muddying your codeba
 
 You can define values inside blocks with let bindings that only exist in that little bit where they're needed.
 
+---
+## When To Use Each
+
+Generally, a where binding is preferred.
+
+- It improves readability
+- Spans across guards
+- Keeps your function body cleaner
+
+So, use a where binding if you're defining the main body of a function, you have multiple guards or you need to define helper functions that shouldn't be exposed globally.
+
+Let bindings on the other hand are a way to create a "temporary variable" any time you want. Use let when you need a local variable, or you're defining a variable inside an `if-else` or `case` block or you need to define something for a very small part of a larger expression.
+
+If in doubt, try where first and see if it works / fits well.
+
 > Next: [[Chapter 14 - Currying]]

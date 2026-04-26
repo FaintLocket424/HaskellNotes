@@ -35,28 +35,28 @@ $$
 	\{ 2, 4 \} = \{ x | x \in \{ 1 .. 5 \}, x \space \text{mod} \space 2 = 0 \}
 $$
 
-> *The set of all integers $x$ between 1 and 5 such that $x$ is even.*
+> *The set of all integers $x$ between 1 and 5 where $x$ is even.*
 
 Haskell supports similar notation for constructing lists.
 
 ```Haskell
-[x | x <- [1..5], x `mod` 2 == 0]
--- [2,4]
+[2 * x | x <- [1..5], x `mod` 2 == 0]
+-- [4,8]
 ```
 
 `x <- [1..5]` is the generator.
 ```x `mod` 2 == 0``` is the guard predicate. More on this later.
+`2 * x` is the output from each iteration.
 
 Just like the set notation, we're taking the list from the generator as `x`, then filtering `x` by the predicate.
 
 In fact, the predicate is not even necessary.
 
 ```Haskell
-[2 * n + 1 | n <- [0..4]]
+[2 * n - 1 | n <- [1..5]]
 -- [1,3,5,7,9]
+-- First 5 odd numbers
 ```
-
-### Multiple Generators 
 
 Comprehensions can contain multiple generators.
 
@@ -105,6 +105,30 @@ Guards and generators can be freely interspersed, but a guard or generator can o
 [(x, y) | x <- [1..3], even x, even y, y <- [x..3]]
 -- error: Variable not in scope: y :: Integer
 ```
+
+### Let Bindings
+
+You can use a let binding within a list comprehension to create a new variable or function you can use.
+
+```Haskell
+calcBmis :: [(Float, Float)] -> [Float]
+calcBmis xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2]
+```
+
+Here, we create the `bmi` variable which takes the value of `w / h ^ 2` for each pair in the initial list. We can then do things with this like create a guard based off it:
+
+```Haskell
+calcBmis :: [(Float, Float)] -> [Float]
+calcBmis xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2, bmi >= 25.0]
+```
+
+Note how we omit the `in` portion since the scope of the let binding is pre-determined when used inside of a list comprehension. Anything to the right of it, or the output section, can see it.
+
+> [!info] You can still use a proper `let <bindings> in <expression>` but its scope will be limited to the `in` expression, not the whole comprehension.
+> ```Haskell
+> calcBmis :: [(Float, Float)] -> [(Float, Float)]
+> calcBmis xs = [(w, h) | (w, h) <- xs, let bmi = w / h ^ 2 in bmi >= 25.0]
+> ```
 
 ---
 ## List Functions
