@@ -123,6 +123,27 @@ not True
 ```
 
 ---
+## If-Else Expressions
+
+In regular programming languages, you have if statements:
+
+```Python
+def func(x):
+	if x > 100:
+		return 10
+	else:
+		return 400
+```
+
+In Haskell, they are **expressions**, which return a value. You're not deciding which code path to take, your deciding which value the expression will return.
+
+```Haskell
+func x = if x > 100 then 10 else 400
+```
+
+> [!warning] It's really important you understand that in Haskell, there is no "step by step" execution of code. It's an **expression** that returns a value.
+
+---
 ## Back To the Example
 
 In our examples, the function body in Python is `(a + b) * a * b` and in Haskell it's...
