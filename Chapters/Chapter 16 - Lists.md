@@ -131,6 +131,78 @@ Note how we omit the `in` portion since the scope of the let binding is pre-dete
 > ```
 
 ---
+## Pattern Matching
+
+In [[Chapter 10 - Pattern Matching]], we saw that we could pattern match literals like:
+
+```Haskell
+describeNumber :: Int -> String
+describeNumber 0 = "It's zero!"
+describeNumber 1 = "It's one!"
+describeNumber n = "It's some other number: " ++ show n
+```
+
+We can do the same thing to lists, but we have even more flexibility. There are 3 main patterns to use:
+
+```Haskell
+[] -- Empty List
+[a, b] -- A 2-element list made up of a and b
+(x:xs) -- An n-element list (n > 1) where the first element is x, and the rest of the list is xs.
+```
+
+1. In the first case, this pattern will only match empty lists and nothing else.
+2. In the second case, this pattern will only match lists which are of length 2, and it will bind the first element to `a`, and the second element to `b`.
+3. In the third case, this pattern will only match lists whose length is at least 1, binding the first value to `x` and binding the rest of the list (which could be empty) to `xs`.
+
+Let's take an example list, `[1,2,3]`. This would fail to match against `[]` as it's not empty, and it would fail to match against `[a,b]` because it's not the right length, but it would match against `(x:xs)`. In that case, `x=1` and `xs=[2,3]`.
+
+> [!warning] There's nothing special about `a`, `b`, `x` or `xs`. Those are just variable names and can be anything.
+> `[first:rest]` is a valid pattern, just uncommon.
+
+Let's look at some examples.
+
+> [!example]- Example 1 - Length
+> 
+> What about implementing our own list length function? Well, we could use pattern matching to recursively compute the length.
+> 
+> ```Haskell
+> length :: [a] -> Int
+> length []     = 0
+> length (_:xs) = 1 + length xs
+> ```
+> 
+> First, notice that we make the equals signs be in the same place, it's just a style thing.
+> 
+> Second, notice how no matter what list goes into this, it will always be broken down until it reaches that base case. We'll touch on this more in the recursion section.
+
+> [!example]- Example 2 - Adding Two Elements
+> 
+> Say we wanted a function which parsed commands, like `"set randomTickSpeed 20"`.
+> 
+> We could do this by using the `words` function which splits a `String` into it's words in a `[String]`.
+> 
+> ```Haskell
+> parseCommand :: [String] -> Bool
+> parseCommand ["set", key, value] = True
+> parseCommand ["get", key] = True
+> parseCommand ["help"] = True
+> parseCommand [] = False
+> parseCommand _ = False
+> 
+> parseCommand $ words "set randomTickSpeed 20"
+> -- True
+> 
+> parseCommand $ words "get randomTickSpeed"
+> -- True
+> 
+> parseCommand $ words "get randomTickSpeed this is not quite what it was expecting"
+> -- False
+> 
+> parseCommand $ words []
+> -- False
+> ```
+
+---
 ## List Functions
 
 > [!important] You have to remember for this section that Haskell lists are **linked lists**, and that affects the time complexity of certain operations compared to arrays.

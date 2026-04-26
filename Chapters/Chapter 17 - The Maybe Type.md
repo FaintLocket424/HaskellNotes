@@ -43,6 +43,7 @@ Note how `Nothing` is the same regardless of the type it references.
 > Imagine this scenario:
 > 
 > > You're creating a function which tells you the index of the first occurrence of an item in a list.
+> > 
 > > How should you handle the case where you try to locate the index of an item that isn't in the list?
 > 
 > We could make our function return a `Maybe Int`, where if the item exists in the list, it returns the index in a `Just`, e.g. `Just 3`. And if the item does not exist in the array, it returns a `Nothing`.
@@ -93,11 +94,10 @@ send_sms_notification(1, "Hello!")
 send_sms_notification(3, "Hi!")
 ```
 
-The problem is the phone number formatting. We don't check that the user ID returned an actual phone number, and not `None`. So when we try to remove the white space from it, Python will crash with an `AttributeError`.
+The problem is the phone number formatting. We don't check that the user ID returned an actual phone number, and not `None`. So when we try to remove the whitespace from it, Python will crash with an `AttributeError`.
 
 > [!check] In Haskell, this scenario is impossible because we are **forced to handle the `Nothing` case**.
 
-Take the `locateItem` function from before, that returns a `Maybe Int`. Let's say we wanted to get the index right after the first `'a'`. In most languages, you would just do something like `locateItem(lst, 'a') + 1` but this doesn't work in Haskell because you cannot add an `Int` and a `Maybe Int`. You first must 
+Take the `locateItem` function from before, that returns a `Maybe Int`. Let's say we wanted to get the index right after the first `'a'`. In most languages, you would just do something like `locateItem(lst, 'a') + 1` but this doesn't work in Haskell because you cannot add an `Int` and a `Maybe Int`. You first must "extract" the `Int` from the "box" using something like pattern matching.
 
-TODO: come back to this when I've explained things like pattern matching or case expressions
 
