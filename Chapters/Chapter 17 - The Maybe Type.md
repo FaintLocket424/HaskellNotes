@@ -100,4 +100,8 @@ The problem is the phone number formatting. We don't check that the user ID retu
 
 Take the `locateItem` function from before, that returns a `Maybe Int`. Let's say we wanted to get the index right after the first `'a'`. In most languages, you would just do something like `locateItem(lst, 'a') + 1` but this doesn't work in Haskell because you cannot add an `Int` and a `Maybe Int`. You first must "extract" the `Int` from the "box" using something like pattern matching.
 
+---
+## Pattern Matching Maybe
+
+One way to get the value out of a `Maybe a` is to pattern match.
 

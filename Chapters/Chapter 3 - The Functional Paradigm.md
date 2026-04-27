@@ -103,11 +103,11 @@ Common examples of side effects include:
 All of these are side effects because they are affecting things besides themselves. When you print to the terminal, you're changing it. When you write to a file, you're outputting a whole file that's external to the function.
 
 > [!warning] A note on pure functions...
-> You might start to think that there's quite a lot of restrictions on pure functions, and how you might do anything in Haskell if every function has to be pure. Well, I'll let you in on a little secret... *it's impossible to write a completely pure program*. If a program was actually completely pure, then it would have no output! It would simply do some calculations then that's it, since it would not be able to print to terminal, or save a file, or make a network request etc.
+> You might start to think that there's quite a lot of restrictions on pure functions, and how you might do anything in Haskell if every function has to be pure. Well, I'll let you in on a little secret... *it's impossible to write a completely pure program*. If a program was actually completely pure, then it would **do nothing!** It would simply do some calculations then that's it, since it would not be able to print to terminal, or save a file, or make a network request etc.
 > 
 > The way we get around this in Haskell is by cheating a little with some advanced data types that will keep all the impure stuff contained and away from our nice pure code. If you're curious, that's what the venerable **Monad** is actually for.
 > 
-> While all this is far beyond your understanding right now, I want you to have this in the back of your mind that real programs are more complex than just some pure functions.
+> While all this is far beyond your understanding right now, I want you to have this in the back of your mind that real programs are more complex than just some idealistic pure functions.
 
 ---
 

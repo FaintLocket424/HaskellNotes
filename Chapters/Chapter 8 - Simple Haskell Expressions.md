@@ -154,7 +154,7 @@ In our examples, the function body in Python is `(a + b) * a * b` and in Haskell
 
 wow
 
-It's the same.
+*It's the same.*
 
 In the next part you'll learn how to define the function itself.
 

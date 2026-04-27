@@ -26,7 +26,7 @@ sqrt 25
 -- 5
 ```
 
-Notice how we just put the number, no brackets.
+Notice how we just write the number, no brackets.
 
 > [!important]
 > Functions are so important in Haskell that they have minimal syntax to make their application easier.
