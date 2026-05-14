@@ -22,14 +22,14 @@ Concrete types in Haskell include:
 - `(Int, Bool)`
 - `[Int]`
 
-Note how once the list type constructor has its type filled in, it becomes a concrete type.
+Note how once the List type constructor `[a]` has its type `a` filled in, it becomes a concrete type.
 
 ---
 ## Type Constructors
 
 A type constructor is a type which requires other types to fully describe it. The best example is what we've been using, a list.
 
-We can "construct" a list of something by using the list type constructor `[]` on a type like `Int` to construct a list of ints `[Int]`.
+We can "construct" a list of something by using the list type constructor `[]` on a type like `Int` to construct a list of integers `[Int]`.
 
 Most type constructors have a syntax like `Type a` or `Type a b`, where you would use it like `Type Int` or `Type String Char`. However, lists are unique because they have special syntax and are instead written as `[a]` with it between the brackets like `[Int]`. Just know for the future that lists are unique and all the others will look different to them.
 
