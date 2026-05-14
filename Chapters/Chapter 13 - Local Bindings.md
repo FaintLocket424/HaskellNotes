@@ -119,9 +119,9 @@ You can define values inside blocks with let bindings that only exist in that li
 ---
 ## When To Use Each
 
-Generally, a where binding is preferred.
+Generally, a `where` binding is preferred as it:
 
-- It improves readability
+- Improves readability
 - Spans across guards
 - Keeps your function body cleaner
 
